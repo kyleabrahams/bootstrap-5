@@ -3,10 +3,14 @@
 
 // Include any default variable overrides here (though functions won't be available)
 $primary: #FF7A00;
+$enable-rounded: true; // Buttons true / false
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+body {
+  font-family: Roboto;
+}
 
 .btn-primary {
     color: white;
@@ -31,3 +35,146 @@ $primary: #FF7A00;
     }
   }
 // bootstrap-5.0.2-examples END
+
+
+// Services Style
+
+body {
+  background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.services {
+  padding-top: 130px;
+  position: relative;
+}
+
+.services  .section-heading p {
+  margin-top: 10px;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+.services .container-fluid {
+  padding-left: 65px;
+  padding-right: 65px;
+}
+
+.services:after {
+  content: '';
+  background-image: url(../node_modules/bootstrap/dist/assets/services-left-dec.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: -300px;
+  width: 261px;
+  height: 368px;
+  z-index: 0;
+}
+
+.services:before {
+  content: '';
+  background-image: url(../images/services-right-dec.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1136px;
+  height: 244px;
+  z-index: 0;
+}
+
+.services .section-heading {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services .section-heading .line-dec {
+  margin: 0 auto;
+}
+
+.service-item {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-radius: 10px;
+  // border-top-right-radius: 50px;
+  transition: all .3s;
+}
+
+.service-item .icon {
+  margin-left: 0px;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  transition: all .3s;
+}
+
+.service-item h4 {
+  transition: all .3s;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.service-item p {
+  transition: all .3s;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.service-item:hover h4,
+.service-item:hover p,
+.service-item:hover .text-button a {
+  color: #fff;
+}
+
+.first-service .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-01.png);
+}
+
+.first-service:hover .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-hover-01.png);
+}
+
+.second-service .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-02.png);
+}
+
+.second-service:hover .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-hover-02.png);
+}
+
+
+.third-service .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-03.png);
+}
+
+.third-service:hover .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-hover-03.png);
+}
+
+.fourth-service .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-04.png);
+}
+
+.fourth-service:hover .icon {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-icon-hover-04.png);
+}
+
+.service-item:hover {
+  background-image: url(../node_modules/bootstrap/dist/assets/service-bg.jpg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover
+}
