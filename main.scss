@@ -1,0 +1,33 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$primary: #FF7A00;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+.btn-primary {
+    color: white;
+    :hover {
+        color: white;
+    }
+
+}
+
+// bootstrap-5.0.2-examples
+.bd-placeholder-img { 
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+// bootstrap-5.0.2-examples END
