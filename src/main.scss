@@ -3,6 +3,7 @@
 
 // Include any default variable overrides here (though functions won't be available)
 $primary: #FF7A00;
+$secondary: #0085FF;
 $enable-rounded: true; // Buttons true / false
 
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -12,13 +13,13 @@ body {
   font-family: Roboto;
 }
 
-.btn-primary {
-    color: white;
-    :hover {
-        color: white;
-    }
+// .btn-primary {
+//     color: white;
+//     :hover {
+//         color: white;
+//     }
 
-}
+// }
 
 // bootstrap-5.0.2-examples
 .bd-placeholder-img { 
@@ -35,6 +36,76 @@ body {
     }
   }
 // bootstrap-5.0.2-examples END
+
+
+// Pricing Card Start 024 appco
+.btn {
+  background: $primary;
+  -moz-user-select: none;
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 0;
+  margin-bottom: 0;
+  padding: 30px 44px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  position: relative;
+  z-index: 1;
+  border: 0;
+  overflow: hidden;
+  margin: 0
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #da1276;
+  z-index: 1;
+  border-radius: 5px;
+  transition: transform 0.5s;
+  transition-timing-function: ease;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  transform: scaleX(0)
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+  color: #fff !important;
+  z-index: -1
+}
+
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: none
+}
+
+.card-btn1 {
+  background: $secondary;
+  border-radius: 6px;
+  padding: 30px 40px;
+  text-transform: uppercase
+}
+
+.card-btn1::before {
+  background: $primary
+}
+// Pricing Card Start 024 appco END
+
+
+
+
 
 
 // 20chain - Services Style
@@ -96,7 +167,7 @@ body {
 }
 
 .services .section-heading .line-dec {
-  margin: 0 auto;
+  margin: 96px auto;
 }
 
 .service-item {
@@ -178,3 +249,52 @@ body {
   background-size: cover
 }
 // 60chain - Services Style END
+
+/* Logo carousel */
+@keyframes slide {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  /* background: white; */
+  white-space: nowrap; 
+  position: relative;
+}
+.logos::before,
+.logos::after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+/* left/right fade */
+.logos::before {
+  left: 0;
+  // background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+.logos::after {
+  right: 0;
+  // background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+.logos:hover .logo-slide {
+  animation-play-state: paused;
+}
+.logo-slide {
+  display: inline-block;
+  animation: 20s slide infinite linear; // 35s default
+  /* animation: 5s slide infinite linear; */
+}
+.logo-slide img {
+  height: 36px;
+  margin: 0 48px;
+}
+/* Logo carousel end */
+
